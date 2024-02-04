@@ -8,25 +8,15 @@
 <body>
     <h1>Add a To Do item</h1>
     <form method="POST" action="add">
+        <!-- Cross site request forgery token -->
         {% csrf_token %}
-        <div>
-            <p>
-                <label for=""id_name">Name: </label>
-                <input type="text" id="id_name" name="item_name" />
-            </p>
-        </div>
-        <div>
-            <p>
-                <label for="id_done">Done: </label>
-                <input type="checkbox" id="id_done" name="done" />
-            </p>
-        </div>
+        <!-- Display form from views.py and forms.py with fields displayed as paragraphs -->
+        {{ form.as_p }}
         <div>
             <p>
                 <button type="submit">Add Item</button>
             </p>
         </div>
     </form>
-    <a href="/add">Add an item</a>
 </body>
 </html>
